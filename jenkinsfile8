@@ -19,7 +19,7 @@ pipeline {
           stage ('deploy') {
             steps {
                 sh 'chmod 400 ./first.pem'
-                ansiblePlaybook become: true, disableHostKeyChecking: true, installation: 'ansible', inventory: 'hosts.ini', playbook: 'calc2.yml'
+                ansiblePlaybook become: true, disableHostKeyChecking: true, inventory: 'hosts.ini', playbook: 'calc2.yml'
             }
         }       
     }
