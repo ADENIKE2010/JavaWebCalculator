@@ -3,26 +3,10 @@
   hosts: all
   become: true
   tasks:
-    - name: Create a Tomcat User
-      user:
-        name: tomcat
-
-    - name: Create a Tomcat Group
-      group:
-        name: tomcat
-
     - name: Install JAVA
       yum:
         name: java-1.8*
         state: present
-
-    - name: Create a Tomcat Directory
-      file:
-        path: /opt/tomcat10
-        owner: tomcat
-        group: tomcat
-        mode: 755
-        recurse: yes
  
     - name: download tomcat server packages
       get_url:
